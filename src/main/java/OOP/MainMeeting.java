@@ -1,7 +1,8 @@
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+package OOP;
 
-public class Main {
+import java.time.LocalDate;
+
+public class MainMeeting {
     public static void main(String[] args) {
         Meeting meeting1 = new Meeting("Spotkanie komisji skrutacyjnej",LocalDate.now(), "ul. Swięty Marcin 30", 12);
 

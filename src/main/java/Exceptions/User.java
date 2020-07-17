@@ -22,7 +22,7 @@ public class User {
         this.creationDate = creationDate;
     }
 
-    public static User createUser(String login, String password, String firstName, String email) {
+    public static User createUser(String login, String password, String firstName, String email) throws NullPointerException{
         if (StringUtils.isAnyEmpty(login, password, firstName, email)) {
             throw new IllegalArgumentException("Należy wypełnić wszystkie pola");
         }
@@ -55,5 +55,18 @@ public class User {
         Scanner inPut = new Scanner(System.in);
         System.out.println("Podaj swój email:");
         return inPut.next();
+    }
+    public static void printOut(User user){
+        StringBuilder builder = new StringBuilder();
+        builder.append("Dane użytkownika ")
+                .append("\nLogin:")
+                .append(user.getLogin())
+                .append("\nHasło: ")
+                .append(user.getPassword())
+                .append("\nImię: ")
+                .append(user.getFirstName());
+
+        System.out.println(builder.toString());
+
     }
 }
