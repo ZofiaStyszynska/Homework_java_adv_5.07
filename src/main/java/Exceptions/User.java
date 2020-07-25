@@ -4,6 +4,7 @@ import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.Scanner;
 
 @Getter
@@ -13,6 +14,8 @@ public class User {
     private String firstName;
     private String email;
     private LocalDate creationDate;
+
+
 
     private User(String login, String password, String firstName, String email, LocalDate creationDate) {
         this.login = login;
@@ -68,5 +71,28 @@ public class User {
 
         System.out.println(builder.toString());
 
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+        User user = (User) o;
+        return Objects.equals(login, user.login);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(login);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", email='" + email + '\'' +
+                ", creationDate=" + creationDate +
+                '}';
     }
 }

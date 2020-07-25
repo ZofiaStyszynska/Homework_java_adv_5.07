@@ -9,4 +9,12 @@ public enum ProductType {
         this.product = product;
         this.code = code;
     }
+
+//    @Override
+//    public String toString() {
+//        return "ProductType:" +
+//                "product='" + product + '\'' +
+//                ", code='" + code + '\'' +
+//                " " + super.toString();
+//    }
 }
